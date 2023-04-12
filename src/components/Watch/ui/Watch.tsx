@@ -1,14 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import useGetDate from "../hooks/useGetDate";
-import currentTime from "../lib/currentTime";
-import currentTimeServer from "../lib/CurrentTimeServer";
 import style from "./Watch.module.css";
-
-export interface ITime {
-  hour: number;
-  min: number;
-  sec: number;
-}
 
 const Watch = () => {
   const { time, isLoading } = useGetDate();

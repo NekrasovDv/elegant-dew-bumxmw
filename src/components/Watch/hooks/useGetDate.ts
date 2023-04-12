@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import currentTime from "../lib/currentTime";
-import currentTimeServer from "../lib/CurrentTimeServer";
+import currentTimeServer from "../lib/currentTimeServer";
 import { IAditionalInfo } from "../types/IAditionalInfo";
-import { ITime } from "../ui/Watch";
+import { ITime } from "../types/ITimes";
 
 function useGetDate() {
   const [time, setTime] = useState<ITime>({ min: 0, hour: 0, sec: 0 });

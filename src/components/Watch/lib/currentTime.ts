@@ -1,6 +1,6 @@
 import { deg, hoursDeg } from "../const/const";
 import { IAditionalInfo } from "../types/IAditionalInfo";
-import { ITime } from "../ui/Watch";
+import { ITime } from "../types/ITimes";
 
 function currentTime(
   setTime: React.Dispatch<React.SetStateAction<ITime>>,
