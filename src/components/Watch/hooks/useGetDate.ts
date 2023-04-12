@@ -7,6 +7,7 @@ import { ITime } from "../types/ITimes";
 function useGetDate() {
   const [time, setTime] = useState<ITime>({ min: 0, hour: 0, sec: 0 });
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   const additionalInfo = useRef<IAditionalInfo>({
     timerId: 0,
@@ -17,7 +18,7 @@ function useGetDate() {
   useEffect(() => {
     if (!additionalInfo.current.timerId) {
       setIsLoading(true);
-      currentTimeServer(setTime, setIsLoading, additionalInfo);
+      currentTimeServer(setTime, setIsLoading, setError, additionalInfo);
     } else {
       additionalInfo.current.timerId = setTimeout(
         () => currentTime(setTime, additionalInfo),
@@ -32,6 +33,7 @@ function useGetDate() {
   return {
     time,
     isLoading,
+    error,
   };
 }
 
